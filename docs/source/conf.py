@@ -35,6 +35,24 @@ extensions = [
 # autoapi_dirs = ['../../src/retoys']
 # autoapi_generate_api_docs=False
 
+###################################################
+###################################################
+###################################################
+
+import tomllib
+
+with open(Path(__file__).parents[2].joinpath("pyproject.toml"), "rb") as f:
+    obj = tomllib.load(f)
+deps = obj["project"]["dependencies"]
+autodoc_mock_imports = [d.split(">=")[0].split("==")[0].strip() for d in deps]
+
+
+#### Remove doc requirements
+
+###################################################
+###################################################
+###################################################
+
 
 napoleon_include_init_with_doc = True
 

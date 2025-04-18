@@ -4,6 +4,8 @@ REToys documentation
 
 REToys is just a playground for trying things related to packaging and releasing python projects.
 
+First update!
+
 
 To get started, install REToys with ``pip``:
 

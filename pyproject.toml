@@ -4,7 +4,6 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "retoys"
-version = "0.0.1-a.1"
 authors = [
     { name = "Reza Esfandiarpoor", email = "me@example.com" },
 ]
@@ -14,12 +13,18 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
+dynamic = [
+  "version",
+]
 requires-python = ">=3.10"
 dependencies = [
     "numpy",
     "tqdm",
     "rich"
 ]
+
+[tool.setuptools.dynamic]
+version = { attr = "retoys_imp.__version__" }
 
 [project.urls]
 Homepage = "https://github.com/Reza-esfandiarpoor/retoys"
